@@ -1,0 +1,27 @@
+---
+interface Props {
+  className?: string;
+  size?: 'sm' | 'md' | 'lg' | 'xl';
+  variant?: 'head' | 'full';
+}
+
+const { className = '', size = 'md', variant = 'head' } = Astro.props;
+
+const sizeMap = {
+  sm: 'h-6 w-6',
+  md: 'h-8 w-8',
+  lg: 'h-10 w-10',
+  xl: 'h-14 w-14',
+};
+
+const src = variant === 'full' ? '/logo.svg' : '/favicon.svg';
+---
+
+<div class={`relative inline-flex items-center justify-center shrink-0 overflow-hidden border border-border bg-card p-0.5 shadow-xs ${sizeMap[size]} ${className}`}>
+  <img
+    src={src}
+    alt="HMITools Mascot Outline Logo"
+    class="h-full w-full object-contain"
+    loading="eager"
+  />
+</div>

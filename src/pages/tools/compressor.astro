@@ -1,0 +1,12 @@
+---
+import ToolLayout from '@/layouts/ToolLayout.astro';
+import { CompressorIsland } from '@/features/utilities/compressor/CompressorIsland';
+---
+
+<ToolLayout
+  title="Dokumen & Media Compressor - HMITools"
+  description="Kompres foto (JPG, PNG, WebP) dan optimalkan berkas PDF secara instan langsung di browser tanpa upload ke server."
+  currentPath="/tools/compressor"
+>
+  <CompressorIsland client:load />
+</ToolLayout>

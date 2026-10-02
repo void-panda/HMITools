@@ -1,0 +1,12 @@
+---
+import ToolLayout from '@/layouts/ToolLayout.astro';
+import { IPKCalculatorIsland } from '@/features/utilities/ipk-calculator/IPKCalculatorIsland';
+---
+
+<ToolLayout
+  title="Target IPK & IPS Simulator"
+  description="Hitung indeks prestasi semester dan simulasikan nilai minimal yang harus didapatkan pada sisa SKS untuk mencapai target IPK kelulusan impian."
+  category="Akademik & Skripsi"
+>
+  <IPKCalculatorIsland client:only="react" />
+</ToolLayout>

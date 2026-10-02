@@ -1,0 +1,133 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import ToolSidebar from '@/components/astro/ToolSidebar.astro';
+import { Menu, X, ChevronRight, RotateCcw } from 'lucide-react';
+
+interface Props {
+  title: string;
+  description: string;
+  category: string;
+}
+
+const { title, description, category } = Astro.props;
+const currentPath = Astro.url.pathname;
+---
+
+<BaseLayout title={`${title} — HMITools`} description={description}>
+  <div class="flex min-h-[calc(100vh-4rem)] flex-col lg:flex-row">
+    <!-- Desktop Sidebar (Sticky Left Panel) -->
+    <div class="hidden w-72 shrink-0 lg:block lg:sticky lg:top-16 lg:h-[calc(100vh-4rem)]">
+      <ToolSidebar currentPath={currentPath} />
+    </div>
+
+    <!-- Mobile Navigation Toggle Header -->
+    <div class="flex items-center justify-between border-b bg-card p-4 lg:hidden">
+      <button
+        id="mobile-sidebar-open"
+        type="button"
+        class="inline-flex items-center gap-2 border bg-background px-3 py-1.5 font-mono text-xs font-semibold hover:bg-muted cursor-pointer"
+      >
+        <Menu className="h-4 w-4" />
+        <span>Daftar Tools</span>
+      </button>
+
+      <span class="font-mono text-xs font-bold uppercase text-muted-foreground">
+        {category}
+      </span>
+    </div>
+
+    <!-- Mobile Drawer Overlay -->
+    <div id="mobile-sidebar-drawer" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-xs lg:hidden">
+      <div class="fixed inset-y-0 left-0 w-80 max-w-[85vw] bg-card flex flex-col">
+        <div class="flex items-center justify-between border-b p-4">
+          <span class="font-mono text-xs font-bold uppercase text-foreground">Menu Utilitas</span>
+          <button id="mobile-sidebar-close" type="button" class="border p-1 hover:bg-muted cursor-pointer">
+            <X className="h-4 w-4" />
+          </button>
+        </div>
+        <div class="flex-1 overflow-y-auto">
+          <ToolSidebar currentPath={currentPath} />
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Workspace Area -->
+    <div class="flex-1 min-w-0 bg-background">
+      <div class="container mx-auto max-w-6xl px-4 py-6 sm:py-8 sm:px-8">
+        
+        <!-- Breadcrumb Navigation & Top Reset Button -->
+        <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+          <nav class="flex items-center gap-1.5 font-mono text-xs text-muted-foreground">
+            <a href="/" class="hover:text-foreground transition-colors">
+              HMITools
+            </a>
+            <ChevronRight className="h-3 w-3 opacity-40 shrink-0" />
+            <span>{category}</span>
+            <ChevronRight className="h-3 w-3 opacity-40 shrink-0" />
+            <span class="text-foreground font-medium truncate max-w-[200px] sm:max-w-none">{title}</span>
+          </nav>
+
+          <!-- Reset Default Button replacing 100% Client-Side text -->
+          <button
+            id="global-reset-tool-btn"
+            type="button"
+            class="inline-flex items-center gap-1.5 border border-border bg-card px-2.5 py-1 font-mono text-xs font-semibold text-muted-foreground hover:text-foreground hover:bg-muted transition-colors cursor-pointer"
+            title="Reset data formulir ke nilai default awal"
+          >
+            <RotateCcw className="h-3.5 w-3.5" />
+            <span>Reset Data Default</span>
+          </button>
+        </div>
+
+        <!-- Clean Flat Top Heading (No Shadows, Clean Typography) -->
+        <div class="mb-8 border border-border bg-card p-5 sm:p-6">
+          <div class="space-y-2">
+            <div class="flex items-center gap-2">
+              <span class="bg-primary/10 text-primary font-mono text-[11px] font-bold px-2 py-0.5 uppercase tracking-wider border border-primary/20">
+                {category}
+              </span>
+            </div>
+
+            <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
+              {title}
+            </h1>
+
+            <p class="text-xs sm:text-sm text-muted-foreground max-w-3xl leading-relaxed">
+              {description}
+            </p>
+          </div>
+        </div>
+
+        <!-- Interactive Tool Content -->
+        <slot />
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<script is:inline>
+  const openBtn = document.getElementById('mobile-sidebar-open');
+  const closeBtn = document.getElementById('mobile-sidebar-close');
+  const drawer = document.getElementById('mobile-sidebar-drawer');
+  const globalResetBtn = document.getElementById('global-reset-tool-btn');
+
+  if (openBtn && closeBtn && drawer) {
+    openBtn.addEventListener('click', () => {
+      drawer.classList.remove('hidden');
+    });
+    closeBtn.addEventListener('click', () => {
+      drawer.classList.add('hidden');
+    });
+    drawer.addEventListener('click', (e) => {
+      if (e.target === drawer) {
+        drawer.classList.add('hidden');
+      }
+    });
+  }
+
+  if (globalResetBtn) {
+    globalResetBtn.addEventListener('click', () => {
+      window.dispatchEvent(new CustomEvent('hmitools:reset-default'));
+    });
+  }
+</script>

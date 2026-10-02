@@ -1,0 +1,12 @@
+---
+import ToolLayout from '@/layouts/ToolLayout.astro';
+import { CertificateIsland } from '@/features/certificate/CertificateIsland';
+---
+
+<ToolLayout
+  title="Bulk E-Sertifikat Generator"
+  description="Generate ratusan file e-sertifikat panitia dan peserta event secara otomatis dari file spreadsheet CSV dalam hitungan detik tanpa batas kuota."
+  category="Organisasi & Event"
+>
+  <CertificateIsland client:only="react" />
+</ToolLayout>

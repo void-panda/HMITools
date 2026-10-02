@@ -1,0 +1,30 @@
+---
+import { Heart, Shield } from "lucide-react";
+---
+
+<footer class="mt-auto border-t bg-card text-card-foreground">
+  <div class="container mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-8 sm:flex-row sm:px-6">
+    <div class="flex flex-col items-center gap-1 text-center sm:items-start sm:text-left">
+      <p class="text-sm font-semibold">
+        HMITools — Student & Campus Toolkit
+      </p>
+      <p class="text-xs text-muted-foreground">
+        100% Gratis, Tanpa Watermark, & Bebas Biaya Server (Client-Side WASM & Canvas Engine).
+      </p>
+    </div>
+
+    <div class="flex flex-wrap items-center gap-4 text-xs font-mono text-muted-foreground">
+      <a href="/about" class="hover:text-foreground transition-colors underline-offset-4 hover:underline">
+        Tentang
+      </a>
+      <span>•</span>
+      <a href="https://github.com/void-panda" target="_blank" rel="noopener noreferrer" class="hover:text-foreground transition-colors underline-offset-4 hover:underline">
+        GitHub: @void-panda
+      </a>
+      <span>•</span>
+      <a href="#" onclick="alert('Tautan donasi akan segera dibuka. Terima kasih atas dukungan Anda!'); return false;" class="hover:text-foreground transition-colors underline-offset-4 hover:underline">
+        Donasi
+      </a>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,12 @@
+---
+import ToolLayout from '@/layouts/ToolLayout.astro';
+import { IGGridIsland } from '@/features/ig-grid/IGGridIsland';
+---
+
+<ToolLayout
+  title="Instagram 3x3 Grid Maker"
+  description="Potong poster dan banner promosi acara kampus menjadi format puzzle feed Instagram (3x1, 3x2, atau 3x3) lengkap dengan nomor urut posting dan paket download ZIP."
+  category="Organisasi & Event"
+>
+  <IGGridIsland client:only="react" />
+</ToolLayout>

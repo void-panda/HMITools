@@ -1,0 +1,12 @@
+---
+import ToolLayout from '@/layouts/ToolLayout.astro';
+import { QRCodeIsland } from '@/features/qr-code/QRCodeIsland';
+---
+
+<ToolLayout
+  title="Custom QR Code Generator"
+  description="Buat QR Code presensi Google Form, link materi Google Drive, atau akses Wi-Fi dengan kustomisasi warna dan penyisipan logo acara di tengah."
+  category="Organisasi & Event"
+>
+  <QRCodeIsland client:only="react" />
+</ToolLayout>

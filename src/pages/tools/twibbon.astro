@@ -1,0 +1,12 @@
+---
+import ToolLayout from '@/layouts/ToolLayout.astro';
+import { TwibbonIsland } from '@/features/twibbon/TwibbonIsland';
+---
+
+<ToolLayout
+  title="Twibbon Campaign Maker"
+  description="Pasang foto profil ke bingkai kampanye kepanitiaan, webinar, dan Ospek dengan gestur zoom, pan, dan rotate touch-friendly di smartphone."
+  category="Organisasi & Event"
+>
+  <TwibbonIsland client:only="react" />
+</ToolLayout>

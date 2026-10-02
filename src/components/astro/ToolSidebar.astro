@@ -1,0 +1,190 @@
+---
+import {
+  FileText,
+  Files,
+  ScanText,
+  Calculator,
+  Bookmark,
+  Sparkles,
+  Award,
+  Grid,
+  QrCode,
+  ArrowLeft,
+  ChevronRight,
+  Minimize2,
+  Music,
+  Layers,
+  Eraser,
+} from 'lucide-react';
+
+interface Props {
+  currentPath: string;
+}
+
+const { currentPath } = Astro.props;
+
+const categories = [
+  {
+    name: 'Akademik & Karir',
+    tools: [
+      {
+        id: 'cv-builder',
+        title: 'CV ATS Builder',
+        shortCode: 'CV-01',
+        href: '/tools/cv-builder',
+        icon: FileText,
+      },
+      {
+        id: 'pdf-tools',
+        title: 'PDF Toolkit (Merge/Split)',
+        shortCode: 'PDF-02',
+        href: '/tools/pdf-tools',
+        icon: Files,
+      },
+      {
+        id: 'compressor',
+        title: 'Dokumen & Media Compressor',
+        shortCode: 'CMP-03',
+        href: '/tools/compressor',
+        icon: Minimize2,
+      },
+      {
+        id: 'ipk-calculator',
+        title: 'Target IPK Simulator',
+        shortCode: 'IPK-04',
+        href: '/tools/ipk-calculator',
+        icon: Calculator,
+      },
+      {
+        id: 'citation',
+        title: 'Citation Formatter',
+        shortCode: 'CIT-05',
+        href: '/tools/citation',
+        icon: Bookmark,
+      },
+    ],
+  },
+  {
+    name: 'Organisasi & Event',
+    tools: [
+      {
+        id: 'twibbon',
+        title: 'Twibbon Campaign Maker',
+        shortCode: 'TWB-01',
+        href: '/tools/twibbon',
+        icon: Sparkles,
+      },
+      {
+        id: 'certificate',
+        title: 'Bulk E-Sertifikat',
+        shortCode: 'SRT-02',
+        href: '/tools/certificate',
+        icon: Award,
+      },
+      {
+        id: 'ig-grid',
+        title: 'Instagram 3x3 Grid',
+        shortCode: 'GRD-03',
+        href: '/tools/ig-grid',
+        icon: Grid,
+      },
+      {
+        id: 'qr-code',
+        title: 'Custom QR Code',
+        shortCode: 'QRC-04',
+        href: '/tools/qr-code',
+        icon: QrCode,
+      },
+    ],
+  },
+  {
+    name: 'Media & Konversi',
+    tools: [
+      {
+        id: 'ocr',
+        title: 'OCR Catatan & Slide',
+        shortCode: 'OCR-01',
+        href: '/tools/ocr',
+        icon: ScanText,
+      },
+      {
+        id: 'media-converter',
+        title: 'Media & Audio Converter',
+        shortCode: 'MED-02',
+        href: '/tools/media-converter',
+        icon: Music,
+      },
+      {
+        id: 'bg-remover',
+        title: 'Image Background Remover',
+        shortCode: 'BGR-03',
+        href: '/tools/bg-remover',
+        icon: Layers,
+      },
+      {
+        id: 'wm-remover',
+        title: 'Image Watermark Remover',
+        shortCode: 'WMR-04',
+        href: '/tools/wm-remover',
+        icon: Eraser,
+      },
+    ],
+  },
+];
+---
+
+<aside class="flex h-full w-full flex-col border-r bg-card text-card-foreground">
+  <!-- Sidebar Header: Back Button & Hub Branding -->
+  <div class="border-b p-4">
+    <a
+      href="/"
+      class="inline-flex items-center gap-2 border bg-background px-3 py-1.5 font-mono text-xs font-semibold transition-colors hover:border-foreground hover:bg-muted"
+    >
+      <ArrowLeft className="h-3.5 w-3.5" />
+      <span>Kembali ke Beranda</span>
+    </a>
+  </div>
+
+  <!-- Sidebar Tool Navigation List -->
+  <div class="flex-1 overflow-y-auto p-4 space-y-6">
+    {
+      categories.map((cat) => (
+        <div class="space-y-2">
+          <div class="flex items-center gap-1.5 px-2 font-mono text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+            <span>{cat.name}</span>
+          </div>
+
+          <div class="space-y-1">
+            {cat.tools.map((tool) => {
+              const Icon = tool.icon;
+              const isActive = currentPath === tool.href || currentPath.startsWith(tool.href);
+              return (
+                <a
+                  href={tool.href}
+                  class={`group flex items-center justify-between border px-2.5 py-2 text-xs font-medium transition-all ${
+                    isActive
+                      ? 'border-primary bg-primary text-primary-foreground font-semibold shadow-xs'
+                      : 'border-transparent bg-transparent text-muted-foreground hover:border-border hover:bg-muted hover:text-foreground'
+                  }`}
+                >
+                  <div class="flex items-center gap-2.5 min-w-0">
+                    <Icon className={`h-4 w-4 shrink-0 ${isActive ? 'text-primary-foreground' : 'text-foreground'}`} />
+                    <span class="truncate">{tool.title}</span>
+                  </div>
+
+                  <div class="flex items-center shrink-0">
+                    <ChevronRight
+                      className={`h-3.5 w-3.5 transition-transform ${
+                        isActive ? 'translate-x-0.5 text-primary-foreground' : 'opacity-0 group-hover:opacity-100'
+                      }`}
+                    />
+                  </div>
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</aside>

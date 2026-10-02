@@ -1,0 +1,12 @@
+---
+import ToolLayout from '@/layouts/ToolLayout.astro';
+import { WmRemoverIsland } from '@/features/utilities/wm-remover/WmRemoverIsland';
+---
+
+<ToolLayout
+  title="Image Watermark Remover"
+  description="Hapus watermark, cap teks, timestamp, atau noda pada gambar dan materi slide kuliah secara mulus dengan kuas interaktif."
+  category="Media & Konversi"
+>
+  <WmRemoverIsland client:load />
+</ToolLayout>

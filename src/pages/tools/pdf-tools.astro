@@ -1,0 +1,12 @@
+---
+import ToolLayout from '@/layouts/ToolLayout.astro';
+import { PDFToolsIsland } from '@/features/pdf-tools/PDFToolsIsland';
+---
+
+<ToolLayout
+  title="PDF Toolkit (Merge, Split, Watermark)"
+  description="Gabungkan file cover & bab skripsi, ekstrak range halaman tertentu, dan beri watermark dokumen secara 100% lokal tanpa upload ke server eksternal."
+  category="Akademik & Skripsi"
+>
+  <PDFToolsIsland client:only="react" />
+</ToolLayout>

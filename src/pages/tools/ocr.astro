@@ -1,0 +1,12 @@
+---
+import ToolLayout from '@/layouts/ToolLayout.astro';
+import { OCRIsland } from '@/features/utilities/ocr/OCRIsland';
+---
+
+<ToolLayout
+  title="OCR Catatan & Slide Kuliah"
+  description="Ekstrak teks bahasa Indonesia dan Inggris dari foto papan tulis, slide materi presentasi dosen, atau tangkapan layar (Ctrl+V) langsung ke Markdown menggunakan WebAssembly."
+  category="Akademik & Skripsi"
+>
+  <OCRIsland client:only="react" />
+</ToolLayout>

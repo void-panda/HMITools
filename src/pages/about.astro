@@ -1,0 +1,348 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import {
+  ShieldCheck,
+  Zap,
+  Code2,
+  Heart,
+  Github,
+  Coffee,
+  CheckCircle2,
+  Lock,
+  Layers,
+  Cpu,
+  GraduationCap,
+  Users,
+  ExternalLink,
+  BookOpen,
+  Sparkles,
+  ArrowUpRight,
+} from 'lucide-react';
+---
+
+<BaseLayout
+  title="Tentang HMITools: Toolkit Produktivitas Mahasiswa & Kampus"
+  description="Mengenal HMITools, keterkaitannya dengan HMIT (Himpunan Mahasiswa Teknologi Informasi), arsitektur client-side, dan komitmen privasi."
+>
+  <div class="container mx-auto max-w-5xl px-4 py-8 sm:py-12 sm:px-6 space-y-10 sm:space-y-12">
+    
+    <!-- 1. Hero Section: Asymmetric Banner with Mascot -->
+    <header class="border border-border bg-card p-6 sm:p-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <!-- Mascot Frame (Top on mobile, Right on desktop) -->
+        <div class="lg:col-span-4 flex justify-center lg:justify-end order-first lg:order-last">
+          <div class="w-40 sm:w-52 border border-border bg-background p-3 text-center">
+            <div class="aspect-square bg-muted/40 border border-dashed border-border flex items-center justify-center p-2">
+              <img
+                src="/logo.jpg"
+                alt="Maskot Resmi HMITools"
+                class="w-full h-full object-contain"
+                loading="eager"
+              />
+            </div>
+            <div class="mt-2.5 pt-2 border-t flex items-center justify-between font-mono text-[10px] text-muted-foreground">
+              <span class="font-bold text-foreground">MASKOT RESMI</span>
+              <span class="text-emerald-600 dark:text-emerald-400 font-semibold">100% Client-Side</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="lg:col-span-8 space-y-4 order-last lg:order-first">
+          <div class="inline-flex items-center gap-2 border border-border bg-background px-2.5 py-1 font-mono text-xs text-muted-foreground">
+            <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
+            <span class="font-bold text-foreground">HMITools</span>
+            <span>•</span>
+            <span>Inisiatif Mahasiswa & Kampus</span>
+          </div>
+
+          <h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground leading-[1.15]">
+            Toolkit produktivitas mahasiswa yang cepat, privat, dan bebas biaya.
+          </h1>
+
+          <p class="text-sm sm:text-base text-muted-foreground leading-relaxed">
+            HMITools diciptakan untuk mempermudah tugas akademik, kebutuhan kepanitiaan acara kampus, dan persiapan berkas karier tanpa batasan kuota, tanpa watermark, dan tanpa mengunggah dokumen Anda ke server luar.
+          </p>
+
+          <!-- Primary Actions -->
+          <div class="flex flex-wrap items-center gap-3 pt-2">
+            <a
+              href="https://github.com/void-panda"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 bg-foreground text-background px-4 py-2 text-xs font-mono font-bold hover:opacity-90 transition-opacity"
+            >
+              <Github className="h-4 w-4" />
+              <span>GitHub: @void-panda</span>
+              <ArrowUpRight className="h-3.5 w-3.5 opacity-70" />
+            </a>
+
+            <a
+              href="#"
+              onclick="alert('Tautan donasi akan segera diaktifkan. Terima kasih banyak atas apresiasi Anda!'); return false;"
+              class="inline-flex items-center gap-2 border border-border bg-background px-4 py-2 text-xs font-mono font-bold text-foreground hover:bg-muted transition-colors"
+            >
+              <Coffee className="h-4 w-4 text-amber-500" />
+              <span>Dukung Proyek (Donasi)</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- 2. Section: Asal-Usul & Wadah HMIT -->
+    <section class="border border-border bg-card p-6 sm:p-8 space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b pb-4">
+        <div>
+          <div class="font-mono text-xs text-primary font-bold tracking-wide uppercase">Identitas & Organisasi</div>
+          <h2 class="text-xl sm:text-2xl font-bold text-foreground mt-0.5">
+            Mengapa Bernama HMITools?
+          </h2>
+        </div>
+        <div class="inline-flex items-center gap-1.5 font-mono text-xs px-2.5 py-1 border bg-background text-muted-foreground w-fit">
+          <GraduationCap className="h-3.5 w-3.5 text-primary" />
+          <span>HMIT Initiative</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <div class="lg:col-span-7 space-y-4 text-xs sm:text-sm text-muted-foreground leading-relaxed">
+          <p>
+            Nama <strong class="text-foreground">HMITools</strong> merupakan gabungan dari <strong class="text-foreground">HMIT (Himpunan Mahasiswa Teknologi Informasi)</strong> dan <em>Tools</em>. Proyek ini diprakarsai serta <strong class="text-foreground">ditadahi secara resmi di bawah naungan HMIT</strong> sebagai wujud kontribusi teknologi nyata bagi mahasiswa dan organisasi kampus.
+          </p>
+          <p>
+            Kebutuhan digital mahasiswa saat menyelenggarakan acara kampus, menyusun berkas magang, maupun menyelesaikan administrasi perkuliahan sering kali terbentur oleh layanan daring komersial: pembatasan kuota per jam, paksaan mendaftar akun, watermark besar, hingga risiko kebocoran data identitas pribadi.
+          </p>
+          <p>
+            HMITools dirancang dari nol dengan filosofi independen: menyediakan utilitas siap pakai dengan kinerja instan, tanpa perantara server penyimpanan eksternal.
+          </p>
+        </div>
+
+        <div class="lg:col-span-5 space-y-3 font-mono text-xs">
+          <div class="border bg-background p-4 space-y-1.5">
+            <div class="flex items-center gap-2 font-bold text-foreground">
+              <Users className="h-4 w-4 text-primary" />
+              <span>Ditadahi Resmi oleh HMIT</span>
+            </div>
+            <p class="font-sans text-xs text-muted-foreground leading-relaxed">
+              Inisiatif terbuka yang didedikasikan untuk kemudahan seluruh mahasiswa Teknologi Informasi dan komunitas kampus secara luas.
+            </p>
+          </div>
+
+          <div class="border bg-background p-4 space-y-1.5">
+            <div class="flex items-center gap-2 font-bold text-foreground">
+              <Code2 className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
+              <span>Transparan & Open Source</span>
+            </div>
+            <p class="font-sans text-xs text-muted-foreground leading-relaxed">
+              Arsitektur aplikasi dapat diaudit langsung di GitHub untuk menjamin tidak adanya pengiriman data diam-diam ke server pihak ketiga.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Section: Spesifikasi Masalah vs Pendekatan HMITools -->
+    <section class="space-y-4">
+      <div class="border-b pb-2">
+        <h2 class="text-lg sm:text-xl font-bold text-foreground">
+          Perbandingan dengan Alat Daring Konvensional
+        </h2>
+        <p class="text-xs text-muted-foreground mt-0.5">
+          Perbedaan mendasar dalam cara pemrosesan berkas dan perlindungan privasi data.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+        <!-- Column 1: Alat Online Biasa -->
+        <div class="border border-border bg-card p-5 sm:p-6 space-y-4">
+          <div class="flex items-center justify-between border-b pb-3">
+            <div class="flex items-center gap-2">
+              <span class="flex h-5 w-5 items-center justify-center bg-destructive/10 text-destructive font-mono text-xs font-bold">
+                ✕
+              </span>
+              <h3 class="font-bold text-foreground text-sm">Layanan Daring Umum</h3>
+            </div>
+            <span class="font-mono text-[10px] text-destructive bg-destructive/10 px-2 py-0.5">Server-Side Risk</span>
+          </div>
+
+          <ul class="space-y-3 text-xs text-muted-foreground leading-relaxed">
+            <li class="flex items-start gap-2.5">
+              <span class="text-destructive font-bold mt-0.5">•</span>
+              <span><strong>Pengunggahan Berkas:</strong> File KTP, pas foto, skripsi, dan sertifikat diunggah ke server pihak ketiga yang lokasinya tidak diketahui.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-destructive font-bold mt-0.5">•</span>
+              <span><strong>Kuota & Paywall:</strong> Dibatasi 1-2 berkas gratis per hari atau dipaksa membayar langganan untuk resolusi penuh.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-destructive font-bold mt-0.5">•</span>
+              <span><strong>Iklan & Wajib Akun:</strong> Harus membuat akun, verifikasi email, serta menghadapi pop-up iklan yang mengalihkan perhatian.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 2: Prinsip HMITools -->
+        <div class="border border-border bg-card p-5 sm:p-6 space-y-4">
+          <div class="flex items-center justify-between border-b pb-3">
+            <div class="flex items-center gap-2">
+              <span class="flex h-5 w-5 items-center justify-center bg-emerald-500/10 text-emerald-600 font-mono text-xs font-bold">
+                ✓
+              </span>
+              <h3 class="font-bold text-foreground text-sm">Prinsip & Standar HMITools</h3>
+            </div>
+            <span class="font-mono text-[10px] text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2 py-0.5">100% Local</span>
+          </div>
+
+          <ul class="space-y-3 text-xs text-muted-foreground leading-relaxed">
+            <li class="flex items-start gap-2.5">
+              <span class="text-emerald-500 font-bold mt-0.5">•</span>
+              <span><strong>Zero-Upload Privacy:</strong> Semua pemrosesan berlangsung di RAM browser Anda. Berkas tidak pernah menyentuh jaringan internet.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-emerald-500 font-bold mt-0.5">•</span>
+              <span><strong>Bebas Batasan Volume:</strong> Generate ratusan sertifikat panitia atau konversi media tanpa batas kuota harian.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-emerald-500 font-bold mt-0.5">•</span>
+              <span><strong>Bebas Hambatan:</strong> Buka situs, unggah berkas lokal, proses langsung, dan simpan hasilnya seketika tanpa login.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Section: Arsitektur Client-Side (Teknis) -->
+    <section class="border border-border bg-card p-6 sm:p-8 space-y-6">
+      <div class="border-b pb-4 space-y-1">
+        <div class="font-mono text-xs text-primary font-bold uppercase">Teknologi Inti</div>
+        <h2 class="text-xl sm:text-2xl font-bold text-foreground">
+          Bagaimana HMITools Bekerja Tanpa Server?
+        </h2>
+        <p class="text-xs text-muted-foreground">
+          Tiga pilar teknis yang memungkinkan pemrosesan cepat langsung di peramban web modern Anda.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 font-mono text-xs">
+        <div class="border bg-background p-4 space-y-2">
+          <div class="font-bold text-foreground flex items-center gap-1.5">
+            <Zap className="h-4 w-4 text-amber-500" />
+            <span>WebAssembly (WASM)</span>
+          </div>
+          <p class="text-muted-foreground font-sans text-xs leading-relaxed">
+            Menjalankan modul kompresi PDF, ekstraksi audio, dan pemrosesan gambar berkinerja tinggi menggunakan CPU laptop atau ponsel Anda secara mandiri.
+          </p>
+        </div>
+
+        <div class="border bg-background p-4 space-y-2">
+          <div class="font-bold text-foreground flex items-center gap-1.5">
+            <Layers className="h-4 w-4 text-primary" />
+            <span>HTML5 Canvas 2D</span>
+          </div>
+          <p class="text-muted-foreground font-sans text-xs leading-relaxed">
+            Menghasilkan sertifikat massal berkualitas cetak, twibbon acara, pas foto resmi, dan kode QR vektor beresolusi tinggi tanpa render server.
+          </p>
+        </div>
+
+        <div class="border bg-background p-4 space-y-2">
+          <div class="font-bold text-foreground flex items-center gap-1.5">
+            <ShieldCheck className="h-4 w-4 text-emerald-500" />
+            <span>Browser Storage</span>
+          </div>
+          <p class="text-muted-foreground font-sans text-xs leading-relaxed">
+            Penyimpanan draf CV ATS dan kalkulasi IPK tersimpan eksklusif di LocalStorage atau IndexedDB browser milik perangkat Anda sendiri.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Section: Navigasi Cepat & Ekosistem Alat -->
+    <section class="border border-border bg-card p-6 sm:p-8 space-y-4">
+      <div class="flex items-center justify-between border-b pb-3">
+        <div>
+          <h2 class="text-base sm:text-lg font-bold text-foreground">
+            Jelajahi Alat yang Tersedia
+          </h2>
+          <p class="text-xs text-muted-foreground mt-0.5">
+            Pilih kategori alat sesuai kebutuhan perkuliahan atau kepanitiaan Anda.
+          </p>
+        </div>
+        <a
+          href="/"
+          class="font-mono text-xs font-bold text-primary hover:underline flex items-center gap-1"
+        >
+          <span>Buka Semua Alat</span>
+          <span>→</span>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 font-mono text-xs">
+        <a
+          href="/#event"
+          class="border bg-background p-3.5 hover:border-primary transition-colors block group"
+        >
+          <div class="font-bold text-foreground group-hover:text-primary transition-colors flex items-center justify-between">
+            <span>Kepanitiaan & Event</span>
+            <span class="text-muted-foreground">→</span>
+          </div>
+          <p class="font-sans text-[11px] text-muted-foreground mt-1 leading-normal">
+            Generator Sertifikat Massal, Pasang Twibbon, QR Code Generator.
+          </p>
+        </a>
+
+        <a
+          href="/#academic"
+          class="border bg-background p-3.5 hover:border-primary transition-colors block group"
+        >
+          <div class="font-bold text-foreground group-hover:text-primary transition-colors flex items-center justify-between">
+            <span>Akademik & Riset</span>
+            <span class="text-muted-foreground">→</span>
+          </div>
+          <p class="font-sans text-[11px] text-muted-foreground mt-1 leading-normal">
+            Kalkulator IPK/Target Nilai, Pembuat Sitasi Ilmiah, Ekstraksi Teks (OCR).
+          </p>
+        </a>
+
+        <a
+          href="/#media"
+          class="border bg-background p-3.5 hover:border-primary transition-colors block group"
+        >
+          <div class="font-bold text-foreground group-hover:text-primary transition-colors flex items-center justify-between">
+            <span>Dokumen & Media</span>
+            <span class="text-muted-foreground">→</span>
+          </div>
+          <p class="font-sans text-[11px] text-muted-foreground mt-1 leading-normal">
+            Pembuat CV ATS, Kompresor PDF/Gambar, Split & Merge PDF, Grid Instagram.
+          </p>
+        </a>
+      </div>
+    </section>
+
+    <!-- 6. Section: Pengembang & Komunitas -->
+    <footer class="border border-border bg-card p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="space-y-1.5 text-center sm:text-left">
+        <h3 class="text-base sm:text-lg font-bold text-foreground">
+          Kolaborasi dan Pemeliharaan Proyek
+        </h3>
+        <p class="text-xs text-muted-foreground max-w-xl leading-relaxed">
+          Dirancang dan dikembangkan oleh <strong class="text-foreground">@void-panda</strong> dengan dukungan penuh <strong class="text-foreground">HMIT</strong>. Masukan fitur, pelaporan kendala, dan kontribusi kode terbuka diterima melalui GitHub.
+        </p>
+      </div>
+
+      <div class="flex items-center gap-3 shrink-0">
+        <a
+          href="https://github.com/void-panda"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 border border-border bg-background px-4 py-2.5 text-xs font-mono font-bold text-foreground hover:bg-muted transition-colors"
+        >
+          <Github className="h-4 w-4" />
+          <span>Profil @void-panda</span>
+          <ArrowUpRight className="h-3.5 w-3.5 opacity-60" />
+        </a>
+      </div>
+    </footer>
+
+  </div>
+</BaseLayout>

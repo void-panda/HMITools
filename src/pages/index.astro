@@ -1,0 +1,120 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { CatalogIsland } from '@/features/dashboard/CatalogIsland';
+import { Shield, Zap, Cpu, Check, Lock, Laptop } from 'lucide-react';
+---
+
+<BaseLayout>
+  <!-- Hero Section with Simple & Direct Copywriting -->
+  <section class="border-b bg-card">
+    <div class="container mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+        <!-- Mascot Art Box: Di atas saat tampilan HP (order-first lg:order-last) -->
+        <div class="lg:col-span-4 flex justify-center lg:justify-end order-first lg:order-last">
+          <div class="border border-border bg-background p-3 sm:p-4 w-36 sm:w-48 lg:w-full max-w-[220px]">
+            <img
+              src="/logo.jpg"
+              alt="HMITools Mascot Logo"
+              class="w-full h-auto aspect-square object-contain"
+            />
+            <div class="mt-2 pt-1.5 border-t flex items-center justify-between font-mono text-[9px] sm:text-[10px] text-muted-foreground">
+              <span class="font-bold text-foreground uppercase">HMITools Mascot</span>
+              <span>v2.0</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Copy -->
+        <div class="lg:col-span-8 space-y-4 order-last lg:order-first">
+          <!-- Badge -->
+          <div class="inline-flex items-center gap-2 border bg-background px-2.5 py-1 font-mono text-[11px] text-muted-foreground">
+            <img src="/favicon.svg" alt="HMITools Mascot" class="h-4 w-4" />
+            <span class="font-bold text-foreground">HMITools</span>
+            <span>•</span>
+            <span>Gratis & Tanpa Login</span>
+          </div>
+
+          <!-- Main Headline -->
+          <h1 class="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl lg:text-5xl leading-tight">
+            Toolkit produktivitas mahasiswa yang cepat, privat, dan bebas biaya.
+          </h1>
+
+          <!-- Plain English / Indonesian Subtitle -->
+          <p class="text-base text-muted-foreground sm:text-lg leading-relaxed max-w-2xl">
+            Bikin CV ATS, edit PDF, pasang twibbon, generate sertifikat massal, dan ekstrak audio rekaman kuliah. Semua diproses langsung di browser tanpa upload berkas ke server.
+          </p>
+
+          <!-- Direct Benefits Checklist -->
+          <div class="pt-2 flex flex-wrap items-center gap-y-2 gap-x-5 text-xs font-mono text-muted-foreground">
+            <div class="flex items-center gap-1.5 text-foreground">
+              <Check className="h-4 w-4 text-emerald-500 stroke-[2.5]" />
+              <span>100% Proses di RAM Lokal</span>
+            </div>
+            <div class="flex items-center gap-1.5 text-foreground">
+              <Check className="h-4 w-4 text-emerald-500 stroke-[2.5]" />
+              <span>Bebas Watermark & Iklan</span>
+            </div>
+            <div class="flex items-center gap-1.5 text-foreground">
+              <Check className="h-4 w-4 text-emerald-500 stroke-[2.5]" />
+              <span>Langsung Pakai Tanpa Akun</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Catalog Section -->
+  <section class="container mx-auto max-w-7xl px-4 py-8 sm:px-6">
+    <div class="mb-6 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+      <div>
+        <h2 class="text-lg font-bold tracking-tight text-foreground sm:text-xl">
+          Daftar Alat
+        </h2>
+        <p class="font-mono text-xs text-muted-foreground">
+          Gunakan tombol pencarian atau pilih kategori di bawah.
+        </p>
+      </div>
+    </div>
+
+    <!-- Live React Catalog Island -->
+    <CatalogIsland client:load />
+  </section>
+
+  <!-- Grounded Explainer Section -->
+  <section class="border-t bg-card/40 py-10">
+    <div class="container mx-auto max-w-7xl px-4 sm:px-6">
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+        <div class="border bg-background p-5 space-y-2">
+          <div class="flex h-8 w-8 items-center justify-center border bg-muted text-foreground">
+            <Shield className="h-4 w-4 text-emerald-500" />
+          </div>
+          <h3 class="text-sm font-bold tracking-tight text-foreground">Berkas Tetap di Perangkat Anda</h3>
+          <p class="text-xs leading-relaxed text-muted-foreground">
+            Dokumen skripsi, foto profil, dan data peserta tidak pernah dikirim ke server luar. Semua komputasi berlangsung di browser Anda.
+          </p>
+        </div>
+
+        <div class="border bg-background p-5 space-y-2">
+          <div class="flex h-8 w-8 items-center justify-center border bg-muted text-foreground">
+            <Laptop className="h-4 w-4 text-primary" />
+          </div>
+          <h3 class="text-sm font-bold tracking-tight text-foreground">Format Standar Industri</h3>
+          <p class="text-xs leading-relaxed text-muted-foreground">
+            Ekspor CV menghasilkan PDF vektor teks asli yang terbaca sistem ATS rekruter, bukan hasil tangkapan layar berpiksel.
+          </p>
+        </div>
+
+        <div class="border bg-background p-5 space-y-2">
+          <div class="flex h-8 w-8 items-center justify-center border bg-muted text-foreground">
+            <Zap className="h-4 w-4 text-amber-500" />
+          </div>
+          <h3 class="text-sm font-bold tracking-tight text-foreground">Ringan dan Cepat</h3>
+          <p class="text-xs leading-relaxed text-muted-foreground">
+            Dibuat sebagai aplikasi statis modern tanpa ketergantungan API backend, sehingga dapat dibuka cepat di laptop maupun HP.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

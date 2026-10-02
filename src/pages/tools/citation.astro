@@ -1,0 +1,12 @@
+---
+import ToolLayout from '@/layouts/ToolLayout.astro';
+import { CitationIsland } from '@/features/utilities/citation/CitationIsland';
+---
+
+<ToolLayout
+  title="Citation & Daftar Pustaka Formatter"
+  description="Format daftar pustaka dan sitasi karya ilmiah dalam standar APA 7th, IEEE, Harvard, dan BibTeX LaTeX secara instan dengan fitur 1-klik salin."
+  category="Akademik & Skripsi"
+>
+  <CitationIsland client:only="react" />
+</ToolLayout>

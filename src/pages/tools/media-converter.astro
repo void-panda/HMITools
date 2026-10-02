@@ -1,0 +1,12 @@
+---
+import ToolLayout from '@/layouts/ToolLayout.astro';
+import { MediaConverterIsland } from '@/features/utilities/media-converter/MediaConverterIsland';
+---
+
+<ToolLayout
+  title="Media & Audio Converter - HMITools"
+  description="Ekstrak audio dari video rekaman kuliah (MP4 to WAV) dan konversi format media gambar secara instan langsung di browser tanpa upload ke server."
+  currentPath="/tools/media-converter"
+>
+  <MediaConverterIsland client:load />
+</ToolLayout>

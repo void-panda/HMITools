@@ -1,0 +1,12 @@
+---
+import ToolLayout from '@/layouts/ToolLayout.astro';
+import { BgRemoverIsland } from '@/features/utilities/bg-remover/BgRemoverIsland';
+---
+
+<ToolLayout
+  title="Image Background Remover"
+  description="Hapus latar belakang foto dan ubah warna background pas foto (merah/biru/transparan) langsung di browser tanpa batas."
+  category="Media & Konversi"
+>
+  <BgRemoverIsland client:load />
+</ToolLayout>

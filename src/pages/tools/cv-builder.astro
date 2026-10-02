@@ -1,0 +1,12 @@
+---
+import ToolLayout from '@/layouts/ToolLayout.astro';
+import { CVBuilderIsland } from '@/features/cv-builder/CVBuilderIsland';
+---
+
+<ToolLayout
+  title="CV ATS Builder"
+  description="Buat Curriculum Vitae berformat standar mesin ATS dengan live preview instan, auto-save di browser, dan ekspor ke file PDF vektor asli."
+  category="Akademik & Skripsi"
+>
+  <CVBuilderIsland client:only="react" />
+</ToolLayout>
